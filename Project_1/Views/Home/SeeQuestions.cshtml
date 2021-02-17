@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Project_1.AppServices.UserInputAppService.DTOs.QuestionsOutput>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/Js/JS.js"></script>
+
+@foreach (var item in Model)
+{
+    <p>Id:@item.Id  Question:@item.Question  Answer:@item.Answer  DateTime:@item.DateTime</p>
+
+    <form action="/Home/Delete" method="post">
+
+        <button type="submit" name="Id" value="@item.Id">წაშლა</button>
+
+    </form>
+    <form action="/Home/Edit" method="post">
+        <button type="submit" name="Id" value="@item.Id">შეცვლა</button>
+    </form>
+}
+
+<p id="editOk" style="text-align:center; color:green;"></p>
+<p id="editError" style="text-align:center; color:red;"></p>
+<hr />
+<a href="/Home/AddQA"> <input type="button" value="კითხვა-პასუხის დამატება" /></a>
+<hr />
+<a href="/Home/Index"> <input type="button" value="საწყის გვერდზე დაბრუნება" /></a>

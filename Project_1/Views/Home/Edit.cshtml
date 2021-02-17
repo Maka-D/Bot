@@ -1,0 +1,30 @@
+﻿@model Project_1.AppServices.UserInputAppService.DTOs.UsersInput
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/Css/StyleSheet.css" />
+    <script src="/Js/JS.js"></script>
+</head>
+<body>
+    <form action="/Home/Update" method="post">
+        <input name="question" value="@Model.Question" onkeypress="return ValidateKey();" />
+        <input name="answer" value="@Model.Answer" onkeypress="return ValidateKey();" />
+        <button id="update" name="Id" value="@Model.Id">Update</button>
+    </form>
+
+    <hr />
+    <a href="/Home/SeeQuestions"> <input type="button" value="კითხვებზე დაბრუნება" /></a>
+    <hr />
+    <a href="/Home/Index"> <input type="button" value="საწყის გვერდზე დაბრუნება" /></a>
+
+    <script>
+        function ValidateKey() {
+            var key = window.event.keyCode;
+            var allowed = 'აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ :;,.?!()';
+            return allowed.indexOf(String.fromCharCode(key)) != -1;
+        }
+    </script>
+</body>
+</html>

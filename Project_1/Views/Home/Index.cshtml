@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/Css/StyleSheet.css"/>
+    <script src="/Js/JS.js"></script>
+
+</head>
+<body>
+
+    <p id="ok" style="text-align:center; color:green;"></p>
+    <p id="error" style="text-align:center; color:red;"></p>
+
+    <div id="bodybox">
+        <div id="chatbox">
+
+        </div>
+
+        <input type="text" name="UsersQuestion" placeholder="გამოიყენეთ ქართული შრიფტი" onkeypress="return ValidateKey();" style="width:200px;" />
+        <button type="button" id="Submit">გაგზავნა</button>
+        <br>
+    </div>
+
+
+    <div style=" margin-left:600px ">
+
+        <hr />
+        <a href="/Home/AddQA"> <input type="submit" value="კითხვა-პასუხის დამატება" /></a>
+        <hr />
+        <a href="/Home/SeeQuestions"> <input type="submit" value="კითხვა-პასუხის ნახვა" /></a>
+
+    </div>
+    <script>
+        //to set restriction on input values so user can enter only specific characters
+        function ValidateKey() {
+            var key = window.event.keyCode;
+            var allowed = 'აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ :;,.?!()';
+
+            return allowed.indexOf(String.fromCharCode(key)) != -1;
+        }
+    </script>
+</body>
+</html>
+
